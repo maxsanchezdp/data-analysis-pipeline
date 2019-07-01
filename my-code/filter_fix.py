@@ -10,6 +10,6 @@ def filter_data(df,country="WORLD",desde=2006,hasta=2016):
     return fdf
 
 def fix_data(df):
-    melt=pd.melt(df, id_vars=["Country Name","Country Code"], value_vars=df.columns[3:],var_name="Year",value_name="Population")
+    melt=pd.melt(df, id_vars=["Country Name","Country Code"], value_vars=df.columns[2:],var_name="Year",value_name="Population")
     melt=melt.sort_values(by=["Country Name", "Year"])
     return melt
