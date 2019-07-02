@@ -20,7 +20,7 @@ def plot_population(df):
     plt.xlabel('Year')
     plt.ylabel('Population (Millions)')
     plt.savefig('./Output/population.png')
-    plt.show()
+    #plt.show()
     return './Output/population.png'
 
 def plot_growth(df):
@@ -31,7 +31,7 @@ def plot_growth(df):
     plt.xlabel('Year')
     plt.ylabel('Growth rate %')
     plt.savefig('./Output/growth.png')
-    plt.show()
+    #plt.show()
     return './Output/growth.png'
     
 def analyse_this(df):
