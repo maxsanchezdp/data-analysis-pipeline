@@ -1,9 +1,9 @@
-from fpdf import FPDF
+from fpdf import *
 
 #PDF GEN:
 
 def make_PDF(cname,calt_names,ccapital,cregion,clanguages,ccurrpop,cpoplot,cgrplot):
-    pdf=FPDF()
+    pdf=fpdf.FPDF()
     pdf.add_page() 
     pdf.set_xy(0, 0)
     pdf.set_font('arial', 'B', 12)
@@ -28,4 +28,5 @@ def make_PDF(cname,calt_names,ccapital,cregion,clanguages,ccurrpop,cpoplot,cgrpl
     pdf.cell(90, 10, "PLOTS", 0, 2, 'C')
     pdf.image(cpoplot, x=8, y=110, w=200, h=60, type = '', link = '')
     pdf.image(cgrplot, x=8, y=170, w=200, h=60, type = '', link = '')
-    pdf.output(f'./Output/{cname}_report.pdf', 'F')
+    pdf.output('./Output/population_report.pdf', 'F')
+    return(f'./Output/population_report.pdf')

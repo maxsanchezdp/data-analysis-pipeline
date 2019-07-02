@@ -34,3 +34,8 @@ def plot_growth(df):
     plt.show()
     return './Output/growth.png'
     
+def analyse_this(df):
+    gr=get_growth(df)
+    pop_pr=plot_population(df)
+    gr_pr=plot_growth(gr)
+    return pop_pr, gr_pr
