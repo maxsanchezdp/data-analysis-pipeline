@@ -2,7 +2,7 @@ import pandas as pd
 import numpy as np
 
 #FILTER AND FIX DATA:
-def filter_data(df,country="SPAIN",desde=2006,hasta=2016):
+def filter_data(df,country,desde,hasta):
     lista_años_st=list(map(str,list(range(desde,hasta+1))))
     lista_total=["Country Name","Country Code"]+lista_años_st
     fdf=df[df["Country Name"]==(country.upper())][lista_total]

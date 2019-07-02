@@ -14,7 +14,7 @@ def get_growth(df):
 
 def plot_population(df):
     plt.figure(figsize=(18,6))
-    plt.plot(df.groupby(["Year"]).sum()["Population"]/1000000, c='blue')
+    plt.plot(df.groupby(["Year"]).sum()["Population"]/1000000,label = 'population', c='blue')
     plt.legend(loc=1)
     plt.title('Population by year')
     plt.xlabel('Year')
@@ -25,7 +25,7 @@ def plot_population(df):
 
 def plot_growth(df):
     plt.figure(figsize=(18,6))
-    plt.plot(df.groupby(["Year"]).sum()["Growth rate %"], c='blue')
+    plt.plot(df.groupby(["Year"]).sum()["Growth rate %"],label = 'growth rate', c='blue')
     plt.legend(loc=1)
     plt.title('Population growth rate by year')
     plt.xlabel('Year')
