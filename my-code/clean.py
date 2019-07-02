@@ -1,6 +1,7 @@
 import pandas as pd
 import numpy as np
 
+
 #CLEAN DATA:
 def clean_data(df):
     col_drop=["Indicator Name","Indicator Code"]
@@ -51,7 +52,7 @@ def clean_data(df):
         'Middle East & North Africa (IDA & IBRD countries)',
         'South Asia (IDA & IBRD)',
         'Sub-Saharan Africa (IDA & IBRD countries)',
-        'Upper middle income']
+        'Upper middle income','World']
     cdf=df.copy()
     cdf=cdf.drop(col_drop, axis=1)
     bad_countries=cdf[cdf["Country Name"].isin(count_drop)==True].index

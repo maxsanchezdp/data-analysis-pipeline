@@ -1,0 +1,31 @@
+from fpdf import FPDF
+
+#PDF GEN:
+
+def make_PDF(cname,calt_names,ccapital,cregion,clanguages,ccurrpop,cpoplot,cgrplot):
+    pdf=FPDF()
+    pdf.add_page() 
+    pdf.set_xy(0, 0)
+    pdf.set_font('arial', 'B', 12)
+    pdf.cell(60)
+    pdf.cell(90, 10, cname, 0, 2, 'C')
+    pdf.cell(90, 10, "Population and growth", 0, 2, 'C')
+    pdf.cell(90, 10, " ", 0, 2, 'C')
+    pdf.set_font('arial',"B" ,10)
+    pdf.cell(-50)
+    pdf.cell(90, 10, f"Alternative names: {calt_names}", 0, 2)
+    pdf.cell(1)
+    pdf.cell(0, 10, f"Capital: {ccapital}", 0, 2 )
+    pdf.cell(-1)
+    pdf.cell(0, 10, f"Region: {cregion}", 0, 2 )
+    pdf.cell(1)
+    pdf.cell(0, 10, f"Languages: {clanguages}", 0, 2 )
+    pdf.cell(-1)
+    pdf.cell(0, 10, f"Current population: {ccurrpop} citizens", 0, 2 )
+    pdf.cell(90, 10, " ", 0, 2, 'C')
+    pdf.cell(90, 10, " ", 0, 2, 'C')
+    pdf.cell(50)
+    pdf.cell(90, 10, "PLOTS", 0, 2, 'C')
+    pdf.image(cpoplot, x=8, y=110, w=200, h=60, type = '', link = '')
+    pdf.image(cgrplot, x=8, y=170, w=200, h=60, type = '', link = '')
+    pdf.output(f'./Output/{cname}_report.pdf', 'F')

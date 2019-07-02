@@ -21,6 +21,7 @@ def plot_population(df):
     plt.ylabel('Population (Millions)')
     plt.savefig('./Output/population.png')
     plt.show()
+    return './Output/population.png'
 
 def plot_growth(df):
     plt.figure(figsize=(18,6))
@@ -31,4 +32,5 @@ def plot_growth(df):
     plt.ylabel('Growth rate %')
     plt.savefig('./Output/growth.png')
     plt.show()
+    return './Output/growth.png'
     
