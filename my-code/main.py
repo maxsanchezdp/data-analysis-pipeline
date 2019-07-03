@@ -6,6 +6,8 @@ from api_enrich import enrich_that
 from pdf import make_PDF
 
 import argparse
+import warnings
+warnings.filterwarnings("ignore")
 
 
 def main(country,yeari,yearf):
